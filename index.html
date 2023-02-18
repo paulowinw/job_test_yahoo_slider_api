@@ -35,7 +35,6 @@
       <div class="l-main-container">
         <div class="l-main-rightrail-wrap">
           <div class="l-main l-main--rightrail">
-            <!-- SLIDESHOW -->
             <!-- Slideshow container -->
             <div class="slideshow-container placeholder">
                 <!-- Next and previous buttons -->
@@ -43,7 +42,6 @@
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
             <br>
-
             <!-- The dots/circles -->
             <div class="slideshow-dots"></div>
 
@@ -107,9 +105,15 @@
               <div class="l-rightrail-modules__section-curtain"></div>
               <div class="l-rightrail-modules__section">
                 <div class="m-make-homepage">
-                  <a class="m-side-nav__link"
-                    ><span>Display browser information</span></a
-                  >
+                  <a class="m-side-nav__link" id="btn-browser-info"><span>Display browser information</span></a>
+                    <!-- The Modal -->
+                    <div id="modal-browser-info" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close-modal">&times;</span>
+                            <p class="modal-text"></p>
+                        </div>
+                    </div>
                 </div>
               </div>
               <div class="l-rightrail-modules__section">
@@ -190,11 +194,14 @@
                         placeholder="Enter your email address"
                         class="email-input signup-email"
                         value=""
-                      /><input
+                      />
+                      <span id="validation-email-message"></span>
+                      <input
                         type="button"
                         value="Sign Up"
                         class="aol-btn secondary-btn button send-sail-throu-signup"
                         id="send-sail-throu-signup"
+                        onclick="validateEmail()"
                       />
                     </form>
                   </div>
