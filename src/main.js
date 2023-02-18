@@ -106,8 +106,7 @@ function loadModal() {
 }
 
 function getBrowserInfo() {
-    let nVer = navigator.appVersion;
-    let nAgt = navigator.userAgent;
+    const nAgt = navigator.userAgent;
     let browserName  = navigator.appName;
     let fullVersion  = ''+parseFloat(navigator.appVersion); 
     let majorVersion = parseInt(navigator.appVersion,10);
