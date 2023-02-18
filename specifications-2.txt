@@ -1,0 +1,29 @@
+Instructions
+Please attempt all questions. Leave notes in comments where you feel explanation is required.
+
+If you encounter rendering issues in the Program Output panel, try clicking “Reset” in the upper right hand corner. If there are still issues, do a full page refresh.
+
+Avoid using JQuery - we want to see you write your own custom JS.
+
+Yahoo engineers may join your test session in order to observe progress.
+
+Challenges:
+You have been provided with some basic HTML, CSS and JS.
+
+Build on this to provide implementations to the following challenges.
+
+Extra points will be allocated for implementation quality, coding style and UI design.
+
+1. Slideshow
+Build a fully functional slideshow (carousel) in the placeholder provided. The slideshow slides should be based on the data returned from the following API call: https://s.yimg.com/cv/apiv2/default/20200528/test.json
+
+You need to call the API, parse the response and create a slideshow using the data. Add a counter on each slide so that a user can see current slide number. Overlay headline text (“title_a”) and summary (“summary”) (truncate to 50 characters) and make style appropriately.
+
+2. Expose Browser Information
+Implement a modal dialog which displays any information that is available to a developer on the client. List the information in a human readable, user-friendly format. Clicking on the “Display Browser Information” button should invoke this modal.
+
+3. Newsletter Sign-up Form
+Add functionality to our “Let us send you our newsletter” module which will validate user input email address and message the user appropriately on valid or invalid inputs.
+
+4. Optimize code for browser
+Study the markup on the page and optimize the code based on the following criteria: page performance, standards-based best practice and general frontend development best practice.
