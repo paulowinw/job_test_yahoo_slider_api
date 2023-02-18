@@ -135,7 +135,7 @@ body {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+}
   
   /* Modal Content/Box */
   .modal-content {
@@ -153,7 +153,6 @@ body {
     font-size: 28px;
     font-weight: bold;
   }
-  
   .close-modal:hover,
   .close-modal:focus {
     color: black;
@@ -161,12 +160,12 @@ body {
     cursor: pointer;
   }
 
-  .validation-email-message {
-    font-size: 14px;
-  }
-  .invalid-email {
-    color: #ef0303;
-  }
-  .valid-email {
-    color: #02a358;
-  }
+.validation-email-message {
+  font-size: 14px;
+}
+.invalid-email {
+  color: #ef0303;
+}
+.valid-email {
+  color: #02a358;
+}
