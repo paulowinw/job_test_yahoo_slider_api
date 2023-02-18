@@ -1,6 +1,7 @@
 let slideIndex = 1;
 createSlideShowItems();
 loadModal();
+loadValidation();
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -14,6 +15,10 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
+
+    const nextButton = document.getElementsByClassName("next")[0];
+    const prevButton = document.getElementsByClassName("prev")[0];
+
     if (n > slides.length) {slideIndex = 1}    
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
@@ -22,8 +27,15 @@ function showSlides(n) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";  
+    slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
+
+    nextButton.onclick = function() {
+        plusSlides(1);
+    }
+    prevButton.onclick = function() {
+        plusSlides(-1);
+    }
 }
 
 function loadJSON(callback) {   
@@ -37,7 +49,7 @@ function loadJSON(callback) {
           }
     };
     xobj.send();
- }
+}
 
 function createSlideShowItems() {
     loadJSON(response => {
@@ -165,14 +177,26 @@ function getBrowserInfo() {
     ;
 }
 
+function loadValidation() {
+    const buttonSignUp = document.getElementById("send-sail-throu-signup");
+
+    buttonSignUp.onclick = function() {
+        validateEmail();
+    }
+}
+
 function validateEmail() {
     const input = document.getElementsByClassName("signup-email")[0];
     const display = document.getElementById("validation-email-message");
-    if (input.value.match(/[^\s@]+@[^\s@]+\.[^\s@]+/gi)) {
+
+    if (!input.value) {
+      display.innerHTML = 'Empty field!';
+      display.classList.add("invalid-email");
+    } else if (input.value.match(/[^\s@]+@[^\s@]+\.[^\s@]+/gi)) {
       display.innerHTML = 'Subscription done!';
       display.classList.add("valid-email");
     } else {
-      display.innerHTML = input.value + ' is not a valid email';
+      display.innerHTML = input.value + ' is not a valid email!';
       display.classList.add("invalid-email");
     }
 }
